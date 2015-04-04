@@ -14,7 +14,7 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/app.css">
     <link rel="stylesheet" href="assets/app.css">
     <!-- endbuild -->
 </head>
@@ -23,63 +23,44 @@
     <div ng-controller="AppCtrl" layout="column" layout-fill>
         <md-toolbar>
             <div class="md-toolbar-tools">
-                    <md-button class="md-icon-button" aria-label="Menu" ng-click="toggleLeft()">
-                        <ng-md-icon icon="view_headline" style="fill:black" size="48px"></ng-md-icon>
-                    </md-button>
+                <md-button class="md-icon-button" aria-label="Menu" ng-click="toggleLeft($event)">
+                    <ng-md-icon icon="{{icon}}" size="48px" options='{"duration": 375}'></ng-md-icon>
+                </md-button>
                 <h3>
                     <span>A que hora pasa?</span>
                 </h3>
             </div>
         </md-toolbar>
         <md-content style="height: 600px;">
-            <md-subheader class="md-primary">Buses que pasan cerca de tu location puto</md-subheader>
             <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
                 <md-toolbar class="md-theme-light">
-                    <h1 class="md-toolbar-tools">Sidenav Right</h1>
+                    <h1 class="md-toolbar-tools">No es tu parada?</h1>
                 </md-toolbar>
                 <md-content ng-controller="LeftCtrl" class="md-padding">
-
+                    <md-list>
+                        <md-item ng-click="goTo('')">
+                            <ng-md-icon icon="home" size="36px"></ng-md-icon>
+                            <p class="md-subhead">Inicio</p>
+                        </md-item>
+                        <md-item ng-click="goTo('searchAddress')">
+                            <ng-md-icon icon="map" size="36px"></ng-md-icon>
+                            <p class="md-subhead"> Buscar en mapa</p>
+                        </md-item>
+                        <md-divider></md-divider>
+                        <md-item>
+                            <ng-md-icon icon="directions" size="36px"></ng-md-icon>
+                            <p class="md-subhead">  Buscar por calle</p>
+                        </md-item>
+                        <md-divider></md-divider>
+                        <md-item>
+                            <ng-md-icon icon="directions_bus" size="36px"></ng-md-icon>
+                            <p class="md-subhead"> Ver por recorrido de linea</p>
+                        </md-item>
+                    </md-list>
                 </md-content>
             </md-sidenav>
-            <div class="md-margin">
-                <md-whiteframe class="md-whiteframe-z1 md-padding" layout layout-align="center center" style="min-height:80px;">
-                <span>ominubus</span>
-                </md-whiteframe>
-            </div>
-            <div class="md-margin">
-                <md-whiteframe class="md-whiteframe-z1 md-padding" layout layout-align="center center" style="min-height:80px;">
-                <span>ominubus</span>
-                </md-whiteframe>
-            </div>
-            <div class="md-margin">
-                <md-whiteframe class="md-whiteframe-z1 md-padding" layout layout-align="center center" style="min-height:80px;">
-                <span>ominubus</span>
-                </md-whiteframe>
-            </div>
-            <div class="md-margin">
-                <md-whiteframe class="md-whiteframe-z1 md-padding" layout layout-align="center center" style="min-height:80px;">
-                <span>ominubus</span>
-                </md-whiteframe>
-            </div>
-            <div class="md-margin">
-                <md-whiteframe class="md-whiteframe-z1 md-padding" layout layout-align="center center" style="min-height:80px;">
-                <span>ominubus</span>
-                </md-whiteframe>
-            </div>
-            <div class="md-margin">
-                <md-whiteframe class="md-whiteframe-z1 md-padding" layout layout-align="center center" style="min-height:80px;">
-                <span>ominubus</span>
-                </md-whiteframe>
-            </div>
-            <div class="md-margin">
-                <md-whiteframe class="md-whiteframe-z1 md-padding" layout layout-align="center center" style="min-height:80px;">
-                <span>ominubus</span>
-                </md-whiteframe>
-            </div>
-            <div class="md-margin">
-                <md-whiteframe class="md-whiteframe-z1 md-padding" layout layout-align="center center" style="min-height:80px;">
-                <span>ominubus</span>
-                </md-whiteframe>
+            <div ng-view>
+
             </div>
         </md-content>
     </div>
@@ -110,6 +91,8 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-material/angular-material.js"></script>
     <script src="bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SVG-Morpheus/0.1.8/svg-morpheus.js"></script>
+
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->

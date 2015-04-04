@@ -15,8 +15,10 @@ angular.module('busUiApp')
 			'Karma'
 		];
 	})
-	.controller('AppCtrl', function($scope, $timeout, $mdSidenav, $log) {
-		$scope.toggleLeft = function() {
+	.controller('AppCtrl', function($scope, $timeout, $mdSidenav, $log, $location) {
+		$scope.icon = "view_headline";
+		$scope.toggleLeft = function($event) {
+			$scope.icon = $scope.icon === 'arrow_back'?'view_headline':'arrow_back';
 			$mdSidenav('left').toggle()
 				.then(function() {
 					$log.debug("toggle left is done");
@@ -28,6 +30,10 @@ angular.module('busUiApp')
 					$log.debug("toggle RIGHT is done");
 				});
 		};
+		$scope.goTo =function(target){
+			$location.path('/' + target);
+			$scope.toggleLeft();
+		}
 	})
 	.controller('LeftCtrl', function($scope, $timeout, $mdSidenav, $log) {
 		$scope.close = function() {
