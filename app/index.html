@@ -21,30 +21,66 @@
 
 <body ng-app="busUiApp">
     <div ng-controller="AppCtrl" layout="column" layout-fill>
-        <md-toolbar md-scroll-shrink>
+        <md-toolbar>
             <div class="md-toolbar-tools">
                     <md-button class="md-icon-button" aria-label="Menu" ng-click="toggleLeft()">
                         <ng-md-icon icon="view_headline" style="fill:black" size="48px"></ng-md-icon>
                     </md-button>
                 <h3>
-                    <span>My App Title</span>
+                    <span>A que hora pasa?</span>
                 </h3>
             </div>
         </md-toolbar>
         <md-content style="height: 600px;">
+            <md-subheader class="md-primary">Buses que pasan cerca de tu location puto</md-subheader>
             <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
                 <md-toolbar class="md-theme-light">
                     <h1 class="md-toolbar-tools">Sidenav Right</h1>
                 </md-toolbar>
                 <md-content ng-controller="LeftCtrl" class="md-padding">
-                    <md-button ng-click="close()" class="md-primary">
-                        Close Sidenav Right
-                    </md-button>
+
                 </md-content>
             </md-sidenav>
-            <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md>
-                Toggle left
-            </md-button>
+            <div class="md-margin">
+                <md-whiteframe class="md-whiteframe-z1 md-padding" layout layout-align="center center" style="min-height:80px;">
+                <span>ominubus</span>
+                </md-whiteframe>
+            </div>
+            <div class="md-margin">
+                <md-whiteframe class="md-whiteframe-z1 md-padding" layout layout-align="center center" style="min-height:80px;">
+                <span>ominubus</span>
+                </md-whiteframe>
+            </div>
+            <div class="md-margin">
+                <md-whiteframe class="md-whiteframe-z1 md-padding" layout layout-align="center center" style="min-height:80px;">
+                <span>ominubus</span>
+                </md-whiteframe>
+            </div>
+            <div class="md-margin">
+                <md-whiteframe class="md-whiteframe-z1 md-padding" layout layout-align="center center" style="min-height:80px;">
+                <span>ominubus</span>
+                </md-whiteframe>
+            </div>
+            <div class="md-margin">
+                <md-whiteframe class="md-whiteframe-z1 md-padding" layout layout-align="center center" style="min-height:80px;">
+                <span>ominubus</span>
+                </md-whiteframe>
+            </div>
+            <div class="md-margin">
+                <md-whiteframe class="md-whiteframe-z1 md-padding" layout layout-align="center center" style="min-height:80px;">
+                <span>ominubus</span>
+                </md-whiteframe>
+            </div>
+            <div class="md-margin">
+                <md-whiteframe class="md-whiteframe-z1 md-padding" layout layout-align="center center" style="min-height:80px;">
+                <span>ominubus</span>
+                </md-whiteframe>
+            </div>
+            <div class="md-margin">
+                <md-whiteframe class="md-whiteframe-z1 md-padding" layout layout-align="center center" style="min-height:80px;">
+                <span>ominubus</span>
+                </md-whiteframe>
+            </div>
         </md-content>
     </div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
