@@ -14,7 +14,8 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/app.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/busCard.css">
     <link rel="stylesheet" href="assets/app.css">
     <!-- endbuild -->
 </head>
@@ -62,7 +63,12 @@
             <div ng-view>
 
             </div>
-        </md-content>
+
+            <bus-card></bus-card>
+            <bus-card></bus-card>
+            <bus-card></bus-card>
+            <bus-card></bus-card>
+            </md-content>
     </div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
@@ -99,6 +105,7 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/directives/busCard.js"></script>
     <!-- endbuild -->
 </body>
 
